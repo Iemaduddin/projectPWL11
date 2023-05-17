@@ -26,7 +26,7 @@ class UpdateMahasiswaRequest extends FormRequest
         return [
             'Nim' => $this->Nim,
             'Nama' => $this->Nama,
-            'featured_image' => $this->feature_image,
+            // 'featured_image' => $this->feature_image,
             'Tanggal_Lahir' => $this->Tanggal_Lahir,
             'Kelas' => $this->kelas_id,
             "Jurusan" => strtoupper($this->Jurusan),

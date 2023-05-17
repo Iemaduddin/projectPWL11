@@ -44,7 +44,7 @@ class MahasiswaController extends Controller
                 'Nim' => $request->Nim,
                 'Nama' => $request->Nama,
                 'Tanggal_Lahir' => $request->Tanggal_Lahir,
-                'featured_image' => $request->featured_image,
+                // 'featured_image' => $request->featured_image,
                 'kelas_id' => $request->Kelas,
                 'Jurusan' => $request->Jurusan,
                 'No_Handphone' => $request->No_Handphone,
@@ -105,6 +105,7 @@ class MahasiswaController extends Controller
      */
     public function destroy(Mahasiswa $mahasiswa)
     {
-        //
+        $mahasiswa->delete();
+        return response()->noContent();
     }
 }
