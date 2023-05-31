@@ -20,6 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResource('/mahasiswas', MahasiswaController::class);
+    Route::get('/logout', [ApiAuthController::class, 'logout']);
+});
+
 Route::get('/hello', function () {
     $data = ["message" => "hello word"];
     return response()->json($data);
@@ -31,3 +36,4 @@ Route::get('/hello', function () {
 Route::apiResource('/mahasiswa', MahasiswaController::class);
 
 Route::post('/login', [ApiAuthController::class, 'login']);
+Route::post('/register', [ApiAuthController::class, 'register']);
